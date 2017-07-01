@@ -87,9 +87,23 @@
     <div id="wrapper">
         <div id="button">
             <div id="back"></div>
-            <div id="top" onclick="window.location = '/opendoor';"><p>Buzz</p></div>
+            <div id="top"><p>Buzz</p></div>
             <div id="side"></div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>        
+        $("button").click(function(){
+            $.post("/opendoor",
+            {
+                name: "Darkwing Duck",
+                pass: "test"
+            },
+            function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    </script>
 </body>
 </html>
