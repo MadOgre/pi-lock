@@ -12,6 +12,13 @@
         margin: 0;
         }
 
+        .green#top {
+            background-color: #78b749
+        }
+        .green#side {
+            background-color: #3ca029; 
+        }
+
         #top{
         background-color: #A50104;
         width: 200px;
@@ -94,14 +101,16 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script>        
-        $("button").click(function(){
+        $("#button").click(function(){
+            $('#button').toggleClass('green');
             $.post("/opendoor",
             {
                 name: "Darkwing Duck",
                 pass: "test"
             },
             function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+                console.log("Data: " + data + "\nStatus: " + status);
+                $('#button').toggleClass('green');
             });
         });
     </script>
