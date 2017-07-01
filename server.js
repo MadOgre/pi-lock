@@ -25,6 +25,8 @@ var PORT = process.env.NODE_PORT || 3000;
 
 var BUZZER_INTERVAL = 3000;
 
+//Serve the index
+var path = require( "path" );
 var indexPath = path.join( __dirname, "/app/index.html" );
 
 function activateBuzzer(cb) {
