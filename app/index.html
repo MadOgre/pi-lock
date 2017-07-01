@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ding-Dong</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+        body{
+        background: #250001;
+        margin: 0;
+        }
+
+        #top{
+        background-color: #A50104;
+        width: 200px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        text-transform: uppercase;
+        z-index: 5;
+        top: 0;
+        }
+
+        #back, #top, #top p{
+        transition: all .25s;
+        }
+
+        #top p{
+        color: #F3F3F3;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        text-align: center;
+        transform: rotateX(45deg);
+        margin-top: 15%;
+            -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+        user-select: none;           /* Non-prefixed version, currently
+                                        not supported by any browser */
+        }
+
+        #back{
+        background: #250001;
+        position: absolute;
+        width: 200px;
+        height: 55px;
+        left: 0px;
+        top: 0px;
+        z-index: 3;
+        float: left;
+        }
+        #side{
+        background-color: #590004;
+        width: 200px;
+        height: 125px;
+        top: 50px;
+        position: absolute;
+        border-radius: 0 0 50% 50%;
+        }
+
+        #button{
+        width: 200px;
+        height: 150px;
+        position: relative;
+        top: calc(50vh - 75px);
+        left: calc(50% - 75px);
+        perspective: 1200;
+        cursor: pointer;
+        }
+
+        #button:active > #top, #button:active > #back{
+        top: 25px;
+        }
+
+        #button:active > #top p{
+        text-shadow: 0 0 15px #FFF;
+        }
+    </style>
+</head>
+<body>
+    WHAT THE FUCK DO YOU WANT?
+    <div id="wrapper">
+        <div id="button">
+            <div id="back"></div>
+            <div id="top" onclick="window.location = '/opendoor';"><p>Buzz</p></div>
+            <div id="side"></div>
+        </div>
+    </div>
+</body>
+</html>

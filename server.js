@@ -19,11 +19,13 @@ var Gpio = require('onoff').Gpio;
 //     //nothing happens
 // };
 
-var lock = new Gpio(14, 'high');
+var lock = new Gpio(17, 'high');
 
 var PORT = process.env.NODE_PORT || 3000;
 
 var BUZZER_INTERVAL = 1000;
+
+var indexPath = path.join( __dirname, "/app/index.html" );
 
 function activateBuzzer(cb) {
     lock.write(0, cb);
@@ -32,6 +34,10 @@ function activateBuzzer(cb) {
 function deactivateBuzzer(cb) {
     lock.write(1, cb);
 }
+
+app.get("/", function(req, res, next){
+    res.status(200).sendFile(indexPath, { });
+});
 
 app.get("/opendoor", function(req, res, next){
     activateBuzzer(function(err){
