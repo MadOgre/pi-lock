@@ -23,7 +23,7 @@ var lock = new Gpio(17, 'high');
 
 var PORT = process.env.NODE_PORT || 3000;
 
-var BUZZER_INTERVAL = 1000;
+var BUZZER_INTERVAL = 3000;
 
 var indexPath = path.join( __dirname, "/app/index.html" );
 
