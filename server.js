@@ -41,6 +41,18 @@ app.get("/", function(req, res, next){
     res.status(200).sendFile(indexPath, { });
 });
 
+app.post("/opendoor", function(req, res, next){
+    activateBuzzer(function(err){
+        if (err) return next(err);
+        setTimeout(function(){
+            deactivateBuzzer(function(err){
+                if (err) return next(err);
+                return res.json({result: 'success'});
+            });
+        }, BUZZER_INTERVAL);
+    })
+});
+
 app.get("/opendoor", function(req, res, next){
     activateBuzzer(function(err){
         if (err) return next(err);
